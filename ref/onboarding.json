@@ -1,0 +1,181 @@
+{
+  "onboarding_flow": {
+    "meta": {
+      "app_name": "MigraineAI",
+      "total_questions": 14,
+      "version": "1.0"
+    },
+    "sections": [
+      {
+        "section_id": "clinical_baseline",
+        "title": "The Basics",
+        "questions": [
+          {
+            "id": "q1_frequency",
+            "question_text": "On average, how many days per month do you have a headache or migraine?",
+            "voice_prompt": "On average, how many days per month do you have a headache or migraine?",
+            "ui_type": "single_select",
+            "options": [
+              { "label": "0–4 days (Low frequency)", "value": "low_freq" },
+              { "label": "5–9 days", "value": "med_freq" },
+              { "label": "10–14 days", "value": "high_freq" },
+              { "label": "15 or more days (Chronic)", "value": "chronic" }
+            ]
+          },
+          {
+            "id": "q2_duration",
+            "question_text": "Without medication, how long do your attacks typically last?",
+            "voice_prompt": "Without medication, how long do your attacks usually last?",
+            "ui_type": "single_select",
+            "options": [
+              { "label": "Less than 4 hours", "value": "under_4h" },
+              { "label": "4 to 72 hours", "value": "4_to_72h" },
+              { "label": "More than 3 days", "value": "over_72h" }
+            ]
+          },
+          {
+            "id": "q3_intensity",
+            "question_text": "Typical pain intensity (1-10)",
+            "voice_prompt": "On a scale of 1 to 10, how painful is a typical attack?",
+            "ui_type": "slider",
+            "min": 1,
+            "max": 10,
+            "step": 1
+          },
+          {
+            "id": "q4_location",
+            "question_text": "Where is the pain typically located?",
+            "voice_prompt": "Where do you usually feel the pain?",
+            "ui_type": "multi_select",
+            "options": [
+              { "label": "Left side", "value": "left" },
+              { "label": "Right side", "value": "right" },
+              { "label": "Both sides", "value": "bilateral" },
+              { "label": "Front / forehead", "value": "frontal" },
+              { "label": "Back of head/neck", "value": "occipital" },
+              { "label":  "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "q5_nausea",
+            "question_text": "Do you experience nausea or vomiting?",
+            "voice_prompt": "Do you experience nausea or vomiting during an attack?",
+            "ui_type": "single_select",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Nausea only", "value": "nausea" },
+              { "label": "Vomiting only", "value": "vomiting" },
+              { "label": "Both", "value": "both" }
+            ]
+          },
+          {
+            "id": "q6_sensitivities",
+            "question_text": "Sensitivities during attack",
+            "voice_prompt": "Are you sensitive to light, sound, or smells during an attack?",
+            "ui_type": "multi_select",
+            "options": [
+              { "label": "Light (Photophobia)", "value": "photophobia" },
+              { "label": "Sound (Phonophobia)", "value": "phonophobia" },
+              { "label": "Smell (Osmophobia)", "value": "osmophobia" },
+              { "label": "None", "value": "none" }
+            ]
+          },
+          {
+            "id": "q7_activity",
+            "question_text": "Does routine physical activity worsen the headache?",
+            "voice_prompt": "Does routine physical activity, like walking or climbing stairs, make the pain worse?",
+            "ui_type": "boolean",
+            "options": [
+              { "label": "Yes", "value": true },
+              { "label": "No", "value": false }
+            ]
+          },
+          {
+            "id": "q8_aura",
+            "question_text": "Do you experience aura symptoms?",
+            "voice_prompt": "Do you experience visual disturbances or tingling before the pain starts?",
+            "ui_type": "multi_select",
+            "options": [
+              { "label": "No aura", "value": "none" },
+              { "label": "Visual (lights/blind spots)", "value": "visual" },
+              { "label": "Sensory (tingling/numbness)", "value": "sensory" },
+              { "label": "Speech difficulty", "value": "dysphasic" }
+            ]
+          }
+        ]
+      },
+      {
+        "section_id": "history_lifestyle",
+        "title": "Personalization",
+        "questions": [
+          {
+            "id": "q9_medication",
+            "question_text": "Do you take preventive medications?",
+            "voice_prompt": "Are you currently taking any daily preventive medications? If yes, please say which ones.",
+            "ui_type": "voice_input_conditional",
+            "logic": "if_yes_capture_text"
+          },
+          {
+            "id": "q10_med_efficacy",
+            "question_text": "Current treatment effectiveness (1-10)",
+            "voice_prompt": "On a scale of 1 to 10, how well does your current treatment work?",
+            "ui_type": "slider",
+            "min": 1,
+            "max": 10
+          },
+          {
+            "id": "q11_triggers",
+            "question_text": "Known triggers",
+            "voice_prompt": "Which factors trigger your migraines?",
+            "ui_type": "multi_select",
+            "options": [
+              { "label": "Stress / Anxiety", "value": "stress" },
+              { "label": "Sleep issues", "value": "sleep" },
+              { "label": "Hormones / Menstruation", "value": "hormonal" },
+              { "label": "Weather changes", "value": "weather" },
+              { "label": "Food / Hydration", "value": "dietary" },
+              { "label": "Unknown", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "q12_patterns",
+            "question_text": "Timing patterns",
+            "voice_prompt": "Do you notice a timing pattern to your attacks?",
+            "ui_type": "multi_select",
+            "options": [
+              { "label": "Menstrual cycle", "value": "menstrual" },
+              { "label": "Weekends / Let-down", "value": "weekend" },
+              { "label": "Seasonal", "value": "seasonal" },
+              { "label": "Time of day", "value": "circadian" },
+              { "label": "No pattern", "value": "none" }
+            ]
+          },
+          {
+            "id": "q13_disability",
+            "question_text": "Work/School days missed in last 3 months",
+            "voice_prompt": "In the last 3 months, how many days of work or school did you miss due to migraines?",
+            "ui_type": "single_select",
+            "options": [
+              { "label": "0 days", "value": "0" },
+              { "label": "1–5 days", "value": "1-5" },
+              { "label": "6–10 days", "value": "6-10" },
+              { "label": "More than 10 days", "value": "10+" }
+            ]
+          },
+          {
+            "id": "q14_goals",
+            "question_text": "Primary goals",
+            "voice_prompt": "What is your primary goal for using this app?",
+            "ui_type": "multi_select",
+            "options": [
+              { "label": "Identify triggers", "value": "triggers" },
+              { "label": "Reduce frequency", "value": "frequency" },
+              { "label": "Find better medication", "value": "medication" },
+              { "label": "Doctor reports", "value": "reports" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

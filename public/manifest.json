@@ -1,0 +1,23 @@
+{
+    "name": "MigraineAI",
+    "short_name": "MigraineAI",
+    "description": "Mindful migraine tracking with quick notes, voice capture, and contextual insights.",
+    "start_url": "/?source=pwa",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#FDFDFC",
+    "background_color": "#FDFDFC",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/logo-icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
